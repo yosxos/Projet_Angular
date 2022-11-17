@@ -13,7 +13,7 @@ export class PagesService {
   };
 
   profil:PagesII ={
-    Titre:"Profile:",
+    Titre:"Votre profile:",
     Nom:"yas",
     Prenom:"ait"
 

@@ -29,8 +29,6 @@ app-root > footer {
  }
  header > app-menu{
   font-size:30px;
-
-
  }
 
 
@@ -59,3 +57,11 @@ form{
 form > * {
   margin: 5px auto;
 }
+
+table{
+  border: 5px solid #1C6EA4;
+  width: 300px;
+  margin: 100px auto;
+
+}
+
