@@ -4,3 +4,15 @@ export interface PagesI {
   intro?:string;
   contenu?:string;
 }
+
+export interface PagesII {
+  Titre:string;
+  Nom:string;
+  Prenom?:string;
+  contenu?:string;
+}
+
+export interface ContenusI {
+  mentions:PagesI;
+  profile:PagesII;
+}

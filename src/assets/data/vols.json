@@ -1,0 +1,61 @@
+[{
+  "code":"AGX-CDG-22-11-18" ,
+  "avion":{
+    "modele":"A-320",
+    "capacite0":"150",
+    "autonomie":"5400",
+    "code":" A-320"
+  },
+  "date":"22-11-18",
+  "personnel": [
+    {
+        "nom":"Doe",
+        "prenom":["Jane","Jhon"],
+        "habilitation":"Pilote"
+
+
+    },{
+
+      "nom":"Hamid",
+      "prenom":["JaLAL","JhoBimn"],
+      "habilitation":"Copilote"
+    }
+
+  ],
+  "aeroportDepart":"Agati (AGX)",
+  "aeroportArrivee":"Paris Charles-de-Gaulle (CDG)",
+  "duree":125
+},
+
+{
+  "code":"AGX-CDG-22-11-18" ,
+  "avion":{
+    "modele":"Boeing 747",
+    "capacite0":"250",
+    "autonomie":"8400",
+    "code":" b-747"
+  },
+  "date":"22-11-18",
+  "personnel": [
+    {
+        "nom":"Bruce",
+        "prenom":["Wayn","Batman"],
+        "habilitation":"PNC"
+
+
+    },{
+
+      "nom":"lamine",
+      "prenom":["Plix","JhoBimn"],
+      "habilitation":"Copilote"
+    }
+
+  ],
+  "aeroportDepart":"Paris Charles-de-Gaulle (CDG)",
+  "aeroportArrivee":"Agati (AGX)",
+  "duree":200
+}
+
+
+
+]

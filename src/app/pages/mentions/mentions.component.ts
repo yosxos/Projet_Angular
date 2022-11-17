@@ -8,11 +8,10 @@ import { PagesService } from 'src/app/services/pages.service';
 })
 export class MentionsComponent implements OnInit {
 
-  titre:string="Mentions légales";
-  constructor(public pages:PagesService) { }
+  constructor(public pagesServ:PagesService) { }
 
   ngOnInit(): void {
-    console.log(this.pages.mentions);
+
   }
 
 }

@@ -1,0 +1,32 @@
+<section>
+  <h3>Liste des vols dont le personnel doit etre attribué</h3>
+  <article >
+    <table>
+      <thead>
+        <tr>
+            <td>Code</td>
+            <td>Modele de l'avion</td>
+            <td>Date de départ</td>
+            <td>Aeroport de départ</td>
+            <td>Aeroport d'arrivé</td>
+            <td>personnel déja attribué</td>
+        </tr>
+      </thead>
+        <tr *ngFor="let v of compagnies.vols">
+          <td>{{v.code}}</td>
+          <td>{{v.avion.modele}}</td>
+          <td>{{v.date}}</td>
+          <td>{{v.aeroportDepart}}</td>
+          <td>{{v.aeroportArrivee}}</td>
+          <td>
+              <ul>
+                <li *ngFor="let p of v.personnel">{{p.nom| uppercase}} {{p.prenom[0]}}({{p.habilitation}})
+              </ul>
+          </td>
+        </tr>
+    </table>
+  </article>
+
+
+
+</section>

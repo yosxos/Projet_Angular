@@ -10,6 +10,7 @@ const routes: Routes = [
 {path:'mentions',component:MentionsComponent},
 {path:'profil',component:ProfilComponent},
 {path:'profil/:fautmettrecequonveut',component:ProfilComponent},
+{path:'intranet',loadChildren: () => import('./intranet/intranet.module').then(m => m.IntranetModule)},
 {path:'**',component:ErreurRouteComponent}
 ];
 

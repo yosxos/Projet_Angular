@@ -8,7 +8,7 @@ import { PagesService } from 'src/app/services/pages.service';
 })
 export class ProfilComponent implements OnInit {
 
-  constructor(public pages:PagesService) { }
+  constructor(public pagesServ:PagesService) { }
 
   ngOnInit(): void {
 
