@@ -7,7 +7,7 @@ import { CompagnieService } from '../../services/compagnie.service';
   styleUrls: ['./attributions.component.css']
 })
 export class AttributionsComponent implements OnInit {
-
+  filtreModele:string='';
   constructor(public compagnies:CompagnieService) { }
 
   ngOnInit(): void {

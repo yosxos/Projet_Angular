@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ContenusI, PagesI, PagesII } from '../modeles/pages-i';
+import { ContenusI, PagesI, ProfileI } from '../modeles/pages-i';
 
 
 @Injectable({
@@ -14,7 +14,7 @@ export class PagesService {
     contenu:"Ces mdsfsdqfdsffqfefef"
   };
 
-  profil:PagesII ={
+  profil:ProfileI ={
     Titre:"Votre profile:",
     Nom:"yas",
     Prenom:"ait"

@@ -5,7 +5,7 @@ export interface PagesI {
   contenu?:string;
 }
 
-export interface PagesII {
+export interface ProfileI {
   Titre:string;
   Nom:string;
   Prenom?:string;
@@ -14,5 +14,6 @@ export interface PagesII {
 
 export interface ContenusI {
   mentions:PagesI;
-  profile:PagesII;
+  profile:ProfileI;
 }
+
