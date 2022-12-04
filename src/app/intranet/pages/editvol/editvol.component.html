@@ -36,25 +36,25 @@
           </div>
         </div>
         <div formArrayName="personnel" *ngFor="let personnel of refForm.controls ; let i=index ">
-
           <div [formGroupName]="i">
-            <div class="form-group">
-              <label for="nom">nom</label>
-              <input type="text" class="form-control" name="nom" formControlName="nom">
-            </div>
-            <div class="form-group">
-              <label for="prenom">prenom</label>
-              <input type="text" class="form-control" name="prenom" formControlName="prenom">
-            </div>
-            <div class="form-group">
-              <label for="habilitation">Habilitation</label>
-              <select class="custom-select" name="habilitation"  id="habilitation" formControlName="habilitation">
-                <option selected></option>
-                <option *ngFor="let fileType of fileTypes" [value]="fileType"> {{fileType}}</option>
-              </select>
-
-
-        </div>
+            <tbody>
+                <th>
+                   <label for="nom">Nom</label>
+                  <input id="nom" type="text" class="form-control"
+                  name="nom" formControlName="nom"></th>
+                <td>
+                  <label for="prenom">Prenom</label>
+                  <input id="prenom" type="text" class="form-control"
+                  name="prenom" formControlName="prenom">
+                </td>
+                <td>
+                  <label for="habilitation">Habilitation</label>
+                  <select class="custom-select" name="habilitation" formControlName="habilitation" id="habilitation" >
+                    <option selected></option>
+                    <option *ngFor="let fileType of fileTypes" [value]="fileType"> {{fileType}}</option>
+                  </select>
+                </td>
+            </tbody>
       </div>
       </div>
    </div>
