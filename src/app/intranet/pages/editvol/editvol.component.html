@@ -1,0 +1,81 @@
+<div style="float: left; width:50%;"></div>
+<form [formGroup]="form" (submit)="editVol(form)">
+  <div class="form-group">
+    <label for="code">Code</label>
+    <input id="code" formControlName="code" type="text" class="form-control" name="code">
+  </div>
+  <div formGroupName="avion">
+    <div class="form-group">
+      <label for="modele">modele</label>
+      <input type="text" class="form-control" name="modele" formControlName="modele">
+    </div>
+    <div class="form-group">
+      <label for="capacite">capacite</label>
+      <input type="number" class="form-control" name="capacite" formControlName="capacite">
+    </div>
+    <div class="form-group">
+      <label for="autonomie">City</label>
+      <input type="number" class="form-control" name="autonomie" formControlName="autonomie">
+    </div>
+    <div class="form-group">
+      <label for="code">code</label>
+      <input type="code" class="form-control" name="code" formControlName="code">
+    </div>
+  </div>
+  <div formGroupName="date">
+    <label for="date">date</label>
+    <input id="date" formControlName="date" type="date" class="form-control" name="date">
+  </div>
+  <tbody>
+    <div class="well">
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-4">
+            <button type="button" class="btn btn-primary"(click)="addPersonnelCLick()">
+              Add personnel
+            </button>
+          </div>
+        </div>
+        <div formArrayName="personnel" *ngFor="let personnel of refForm.controls ; let i=index ">
+
+          <div [formGroupName]="i">
+            <div class="form-group">
+              <label for="nom">nom</label>
+              <input type="text" class="form-control" name="nom" formControlName="nom">
+            </div>
+            <div class="form-group">
+              <label for="prenom">prenom</label>
+              <input type="text" class="form-control" name="prenom" formControlName="prenom">
+            </div>
+            <div class="form-group">
+              <label for="habilitation">Habilitation</label>
+              <select class="custom-select" name="habilitation"  id="habilitation" formControlName="habilitation">
+                <option selected></option>
+                <option *ngFor="let fileType of fileTypes" [value]="fileType"> {{fileType}}</option>
+              </select>
+
+
+        </div>
+      </div>
+      </div>
+   </div>
+  </tbody>
+
+  <div class="form-group">
+    <label for="aeroportDepart">aeroportDepart</label>
+    <input id="aeroportDepart" formControlName="aeroportDepart" type="text" class="form-control" name="aeroportDepart">
+  </div>
+  <div class="form-group">
+    <label for="aeroportArrivee">aeroportArrivee</label>
+    <input id="aeroportArrivee" formControlName="aeroportArrivee" type="text" class="form-control" name="aeroportArrivee">
+  </div>
+  <div class="form-group">
+    <label for="duree">duree</label>
+    <input id="duree" formControlName="duree" type="number" class="form-control" name="duree">
+  </div>
+  <div class="panel-footer">
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+
+</form>
+<h3>Form Value</h3>
+{{form.value |json}}

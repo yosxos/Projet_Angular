@@ -17,8 +17,7 @@ export class EditpersComponent implements OnInit {
   constructor(private route:ActivatedRoute,
   public compagnies:CompagnieService) { }
   perxx:PersonnelI;
-  nami:String;
-  private sub:any;
+
   ngOnInit(): void {
      const name=this.route.snapshot.params["nom"];
      this.perxx=this.getPersonel(name)

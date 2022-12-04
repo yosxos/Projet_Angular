@@ -17,7 +17,7 @@ export interface PersonnelI{
 }
 
 export interface VolI{
-  code:string|number ;
+  code:string ;
   avion:AvionI;
   date:Date;
   personnel:Array<PersonnelI>;

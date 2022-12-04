@@ -12,6 +12,8 @@ import { PersonnelsPipe } from './utils/personnels.pipe';
 import { EditpersComponent } from './pages/editpers/editpers.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreatepersComponent } from './pages/createpers/createpers.component';
+import { EditvolComponent } from './pages/editvol/editvol.component';
+import { AddvolComponent } from './pages/addvol/addvol.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { CreatepersComponent } from './pages/createpers/createpers.component';
     AvionsPipe,
     PersonnelsPipe,
     EditpersComponent,
-    CreatepersComponent
+    CreatepersComponent,
+    EditvolComponent,
+    AddvolComponent
   ],
   imports: [
     CommonModule,

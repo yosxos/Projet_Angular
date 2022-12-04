@@ -9,7 +9,7 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { MentionsComponent } from './pages/mentions/mentions.component';
 import { ErreurRouteComponent } from './pages/erreur-route/erreur-route.component';
 import { ProfilComponent } from './pages/profil/profil.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

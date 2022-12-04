@@ -3,7 +3,7 @@ import { PersonnelI } from '../../modeles/compagnie-i';
 import { CompagnieService } from '../../services/compagnie.service';
 import { HabilitationsE } from '../../modeles/compagnie-i';
 import { NgForm } from '@angular/forms';
-import { combineAll } from 'rxjs';
+
 
 @Component({
   selector: 'app-createpers',

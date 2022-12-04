@@ -43,6 +43,17 @@ getAvions(){
   this.avions =p;
 });
 }
+getVol(code:string){
+  return this.vols.filter((d)=>d.code ==code)[0];
+}
+addVol(vol:VolI){
+  const body=JSON.stringify(vol);
+  this.vols.push(vol);
+  console.log(this.personnels);
+}
+deleteVol(vol:VolI){
+  this.vols = this.vols.filter(obj =>   obj !== vol);
 
+}
 
 }

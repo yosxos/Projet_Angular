@@ -1,6 +1,7 @@
 <section>
   <h3>Liste des vols dont le personnel doit etre attribué</h3>
   <article >
+    <a> <button class="btn btn-warning"(click)="addButtonClick()">Add vol</button></a>
     <input [(ngModel)]="filtreModele" name="filtre">
     <table>
       <thead>
@@ -11,6 +12,7 @@
             <td>Aeroport de départ</td>
             <td>Aeroport d'arrivé</td>
             <td>personnel déja attribué</td>
+            <td>Action</td>
         </tr>
       </thead>
         <tr *ngFor="let v of compagnies.vols | avions:filtreModele">
@@ -24,6 +26,7 @@
                 <li *ngFor="let p of v.personnel">{{p.nom| uppercase}} {{p.prenom[0]}}({{p.habilitation}})
               </ul>
           </td>
+          <td> <button class="btn btn-warning"(click)="editButtonClick(v.code)">Edit vols</button></td>
         </tr>
     </table>
   </article>

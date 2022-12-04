@@ -2,7 +2,7 @@
   "code":"AGX-CDG-22-11-18" ,
   "avion":{
     "modele":"A-320",
-    "capacite0":"150",
+    "capacite":"150",
     "autonomie":"5400",
     "code":" A-320"
   },
@@ -31,7 +31,7 @@
   "code":"AGX-CDG-22-11-18" ,
   "avion":{
     "modele":"Boeing 747",
-    "capacite0":"250",
+    "capacite":"250",
     "autonomie":"8400",
     "code":" b-747"
   },
