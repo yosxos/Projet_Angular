@@ -1,0 +1,25 @@
+<section>
+  <h3>Liste des avions disponible</h3>
+  <article >
+    <input [(ngModel)]="filtreModele" name="filtre">
+    <table>
+      <thead>
+        <tr>
+            <td>modele</td>
+            <td>capacite</td>
+            <td>autonomie</td>
+            <td>code</td>
+        </tr>
+      </thead>
+        <tr *ngFor="let v of compagnies.avions ">
+          <td>{{v.modele}}</td>
+          <td>{{v.capacite}}</td>
+          <td>{{v.autonomie}}</td>
+          <td>{{v.code}}</td>
+        </tr>
+    </table>
+  </article>
+
+
+
+</section>

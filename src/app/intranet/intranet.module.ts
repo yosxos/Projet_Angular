@@ -8,6 +8,7 @@ import { AttributionsComponent } from './pages/attributions/attributions.compone
 import { PersonnelsComponent } from './pages/personnels/personnels.component';
 import { AvionsPipe } from './utils/avions.pipe';
 import { FormsModule } from '@angular/forms';
+import { PersonnelsPipe } from './utils/personnels.pipe';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     AvionsComponent,
     AttributionsComponent,
     PersonnelsComponent,
-    AvionsPipe
+    AvionsPipe,
+    PersonnelsPipe
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,37 @@
+[
+
+  {
+    "modele":"A-420",
+    "capacite0":"250",
+    "autonomie":"5400",
+    "code":" A-420"
+  },
+  {
+    "modele":"A-220",
+    "capacite0":"120",
+    "autonomie":"5400",
+    "code":" A-220"
+  },
+  {
+    "modele":"A-420",
+    "capacite0":"250",
+    "autonomie":"5400",
+    "code":" A-420"
+  },
+  {
+    "modele":"A-350",
+    "capacite0":"250",
+    "autonomie":"5400",
+    "code":" A-350"
+  },
+  {
+    "modele":"A-320",
+    "capacite0":"150",
+    "autonomie":"5400",
+    "code":" A-320"
+  }
+
+
+
+
+]

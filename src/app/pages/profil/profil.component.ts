@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { PagesService } from 'src/app/services/pages.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-profil',
@@ -8,7 +9,7 @@ import { PagesService } from 'src/app/services/pages.service';
 })
 export class ProfilComponent implements OnInit {
 
-  constructor(public pagesServ:PagesService) { }
+  constructor(public userServ:UserService,public pageServ:PagesService) { }
 
   ngOnInit(): void {
 

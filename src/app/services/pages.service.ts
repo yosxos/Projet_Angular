@@ -11,7 +11,7 @@ export class PagesService {
 
   mentions:PagesI ={
     titre:"Mentions légales",
-    contenu:"Ces mdsfsdqfdsffqfefef"
+    contenu:"Copy rights ..."
   };
 
   profil:ProfileI ={

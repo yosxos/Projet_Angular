@@ -1,19 +1,36 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { VolI } from '../modeles/compagnie-i';
+import { Injectable, Input } from '@angular/core';
+import { AvionI, PersonnelI, VolI } from '../modeles/compagnie-i';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CompagnieService {
   vols:VolI[]=<VolI[]>{}
+  personnels:PersonnelI[]=<PersonnelI[]>{}
+  avions:AvionI[]=<AvionI[]>{}
+
 
   constructor(private readonly http:HttpClient) {
     this.getVols();
+    this.getPersonels();
+    this.getAvions();
   }
 getVols(){
-  this.http.get<VolI[]>('assets/data/vols.json').subscribe(p => {console.log("Donne du fichier json",p);
+  this.http.get<VolI[]>('assets/data/vols.json').subscribe(p => {console.log("Data du fichier json",p);
   this.vols =p;});
 }
+getPersonels(){
+  this.http.get<PersonnelI[]>('assets/data/personnels.json').subscribe(p => {console.log("Data du fichier json",p);
+  this.personnels =p;
+});
+}
+
+getAvions(){
+  this.http.get<AvionI[]>('assets/data/avions.json').subscribe(p => {console.log("Data du fichier json",p);
+  this.avions =p;
+});
+}
+
 
 }

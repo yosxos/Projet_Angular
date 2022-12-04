@@ -1,1 +1,26 @@
-<p>personnels works!</p>
+<section>
+  <h3>Liste des personnels disponible</h3>
+  <button class="btn btn-warning">Edit personnels</button>
+  <article >
+
+    <input [(ngModel)]="filtreModele" name="filtre">
+    <table>
+      <thead>
+        <tr>
+            <td>Nom</td>
+            <td>Prenom</td>
+            <td>Habilitation</td>
+        </tr>
+      </thead>
+        <tr *ngFor="let v of compagnies.personnels | personnels:filtreModele">
+          <td>{{v.nom}}</td>
+          <td>{{v.prenom}}</td>
+          <td>{{v.habilitation}}</td>
+
+        </tr>
+    </table>
+  </article>
+
+
+
+</section>

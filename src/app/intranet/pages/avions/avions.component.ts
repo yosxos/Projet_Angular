@@ -8,7 +8,8 @@ import { CompagnieService } from '../../services/compagnie.service';
 })
 export class AvionsComponent implements OnInit {
 
-  constructor(public volServ:CompagnieService) { }
+  filtreModele:string='';
+  constructor(public compagnies:CompagnieService) { }
 
   ngOnInit(): void {
   }

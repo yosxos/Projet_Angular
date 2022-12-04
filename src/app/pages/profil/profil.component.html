@@ -1,14 +1,17 @@
+<nav>
+  <a routerLink="/"href>Accueil</a>
+</nav>
 <section>
-    <h1>{{pagesServ.profil.Titre}}</h1>
+    <h1>{{pageServ.profil.Titre}}</h1>
     <table style="width: 300px;" border="2">
       <tbody>
       <tr>
       <td>name</td>
-      <td>{{pagesServ.profil.Nom}}</td>
+      <td>{{userServ.user.nom}}</td>
       </tr>
       <tr>
       <td>Last name</td>
-      <td>{{pagesServ.profil.Prenom}}</td>
+      <td>{{userServ.user.prenoms}}</td>
       </tr>
       </tbody>
       </table>
