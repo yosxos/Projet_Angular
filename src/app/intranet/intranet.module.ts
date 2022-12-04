@@ -7,8 +7,11 @@ import { AvionsComponent } from './pages/avions/avions.component';
 import { AttributionsComponent } from './pages/attributions/attributions.component';
 import { PersonnelsComponent } from './pages/personnels/personnels.component';
 import { AvionsPipe } from './utils/avions.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonnelsPipe } from './utils/personnels.pipe';
+import { EditpersComponent } from './pages/editpers/editpers.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CreatepersComponent } from './pages/createpers/createpers.component';
 
 
 @NgModule({
@@ -18,12 +21,16 @@ import { PersonnelsPipe } from './utils/personnels.pipe';
     AttributionsComponent,
     PersonnelsComponent,
     AvionsPipe,
-    PersonnelsPipe
+    PersonnelsPipe,
+    EditpersComponent,
+    CreatepersComponent
   ],
   imports: [
     CommonModule,
     IntranetRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class IntranetModule { }

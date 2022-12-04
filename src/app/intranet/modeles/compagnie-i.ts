@@ -25,7 +25,7 @@ export interface VolI{
   aeroportArrivee:string;
   duree:number;
 }
-enum HabilitationsE {
+export enum HabilitationsE {
   pilote = 'Pilote',
   copilote='Copilote',
   pnc='PNC'

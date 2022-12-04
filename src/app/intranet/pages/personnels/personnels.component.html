@@ -1,26 +1,26 @@
 <section>
   <h3>Liste des personnels disponible</h3>
-  <button class="btn btn-warning">Edit personnels</button>
-  <article >
 
-    <input [(ngModel)]="filtreModele" name="filtre">
+  <article >
+    <a> <button class="btn btn-warning"(click)="addButtonClick()">Create personnels</button></a>
     <table>
+      <input [(ngModel)]="filtreModele" name="filtre">
       <thead>
         <tr>
             <td>Nom</td>
             <td>Prenom</td>
             <td>Habilitation</td>
+            <td>Action</td>
         </tr>
       </thead>
         <tr *ngFor="let v of compagnies.personnels | personnels:filtreModele">
           <td>{{v.nom}}</td>
           <td>{{v.prenom}}</td>
           <td>{{v.habilitation}}</td>
+          <td> <button class="btn btn-warning"(click)="editButtonClick(v.nom)">Edit personnels</button></td>
+          <td> <button class="btn btn-warning"(click)="compagnies.deletePersonel(v)">Delete personnels</button></td>
 
         </tr>
     </table>
   </article>
-
-
-
 </section>
