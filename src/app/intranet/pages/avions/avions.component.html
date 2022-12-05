@@ -1,25 +1,19 @@
+<aside>
+  <h2>list des avions</h2>
+  <ul>
+  <li *ngFor="let av of compagnies.avions" (click)="selectAvion(av.code)">
+  {{av.modele}}
+  </ul>
+</aside>
 <section>
-  <h3>Liste des avions disponible</h3>
-  <article>
-    <input [(ngModel)]="filtreModele" name="filtre">
-    <table>
-      <thead>
-        <tr>
-          <td>modele</td>
-          <td>capacite</td>
-          <td>autonomie</td>
-          <td>code</td>
-        </tr>
-      </thead>
-      <tr *ngFor="let v of compagnies.avions " >
-        <td>{{v.modele}}</td>
-        <td>{{v.capacite}}</td>
-        <td>{{v.autonomie}}</td>
-        <td>{{v.code}}</td>
-      </tr>
-    </table>
-  </article>
-
-
-
+  <h3>Liste des avions disponibles</h3>
+  <p>Code l'avion sélectionné :</p>
+  <form (submit)="updateAvion()" #f="ngForm" *ngIf="avion">
+    <input [(ngModel)]="avion.modele" name="modele">
+    <input [(ngModel)]="avion.capacite" name="capacite">
+    <input [(ngModel)]="avion.autonomie" name="autonomie">
+    <input [(ngModel)]="avion.code" name="code">
+    <input type="reset" value="Annuler" (click)="resetAvion()">
+    <input type="submit" value="Valider">
+  </form>
 </section>
