@@ -2,16 +2,20 @@
   <h2>list des avions</h2>
   <ul>
   <li *ngFor="let av of compagnies.avions" (click)="selectAvion(av.code)">
-  {{av.modele}}
+                          {{av.modele}}
   </ul>
 </aside>
 <section>
   <h3>Liste des avions disponibles</h3>
   <p>Code l'avion sélectionné :</p>
   <form (submit)="updateAvion()" #f="ngForm" *ngIf="avion">
+    <label for="modele"> Modèle</label>
     <input [(ngModel)]="avion.modele" name="modele">
+    <label for="capacite"> Capacite</label>
     <input [(ngModel)]="avion.capacite" name="capacite">
+    <label for="autonomie"> Autonomie</label>
     <input [(ngModel)]="avion.autonomie" name="autonomie">
+    <label for="code"> Code</label>
     <input [(ngModel)]="avion.code" name="code">
     <input type="reset" value="Annuler" (click)="resetAvion()">
     <input type="submit" value="Valider">
