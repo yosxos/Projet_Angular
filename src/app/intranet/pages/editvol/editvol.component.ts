@@ -18,7 +18,6 @@ export class EditvolComponent implements OnInit {
     form:FormGroup
     vol:VolI;
     code:string;
-    personnels:PersonnelI[]=<PersonnelI[]>{}
     public fileTypes = Object.values(HabilitationsE);
   ngOnInit() {
     this.form= this.fb.group( {
@@ -63,10 +62,6 @@ export class EditvolComponent implements OnInit {
   //    personnel: this.getPerso(vol),
   // }
   );
-    //this.patchPersonnel(vol);
-  }
-  getPerso(vol:VolI){
-      return vol.personnel
 
   }
   patchPersonnel(vol:VolI):void{
