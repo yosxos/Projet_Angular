@@ -9,11 +9,19 @@ import { CompagnieService } from '../../services/compagnie.service';
 })
 export class AvionsComponent implements OnInit {
 
-
+  avion:AvionI =<AvionI>{} ;
   filtreModele: string = '';
   constructor(public compagnies: CompagnieService) { }
 
   ngOnInit(): void {
   }
+  selectAvion(code:string |number){
+    this.avion = this.compagnies.avions.find(av=> av.code==code)!  }
+  updateAvion(){
+    this.compagnies.updateFireAvion(this.avion.code as string ,this.avion)
 
+  }
+  resetAvion(){
+    this.avion=<AvionI>{};
+  }
 }
