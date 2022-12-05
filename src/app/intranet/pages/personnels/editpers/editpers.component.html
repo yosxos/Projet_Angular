@@ -1,4 +1,3 @@
-
 <form #personnelForm="ngForm" (submit)="editPersonnel(personnelForm)">
   <div class="panel panel-primary">
     <div class="panel-heading">
@@ -7,17 +6,15 @@
     <div class="pannel-body">
       <div class="form-group">
         <label for="nom">Nom</label>
-        <input id="fullName" type="text" class="form-control"
-        name="nom" [(ngModel)]="perxx.nom">
+        <input id="fullName" type="text" class="form-control" name="nom" [(ngModel)]="perxx.nom">
       </div>
       <div class="form-group">
         <label for="prenom">Prenom</label>
-        <input id="fullName" type="text" class="form-control"
-        name="prenom" [(ngModel)]="perxx.prenom" >
+        <input id="fullName" type="text" class="form-control" name="prenom" [(ngModel)]="perxx.prenom">
       </div>
       <div class="form-group">
         <label for="habilitation">Habilitation</label>
-        <select class="custom-select" name="habilitation" [(ngModel)]="perxx.habilitation" id="habilitation" >
+        <select class="custom-select" name="habilitation" [(ngModel)]="perxx.habilitation" id="habilitation">
           <option selected></option>
           <option *ngFor="let fileType of fileTypes" [value]="fileType"> {{fileType}}</option>
         </select>

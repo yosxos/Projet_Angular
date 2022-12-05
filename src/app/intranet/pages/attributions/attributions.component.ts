@@ -8,19 +8,19 @@ import { CompagnieService } from '../../services/compagnie.service';
   styleUrls: ['./attributions.component.css']
 })
 export class AttributionsComponent implements OnInit {
-  filtreModele:string='';
-  constructor(public compagnies:CompagnieService,
-    private _router:Router
-    ) { }
+  filtreModele: string = '';
+  constructor(public compagnies: CompagnieService,
+    private _router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
-  editButtonClick(code:string){
- this._router.navigate(['/intranet/editvol',code])
+  editButtonClick(code: string) {
+    this._router.navigate(['/intranet/editvol', code])
 
   }
-  addButtonClick(){
+  addButtonClick() {
     this._router.navigate(['/intranet/addvol']);
 
   }

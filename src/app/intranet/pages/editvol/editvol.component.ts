@@ -13,98 +13,88 @@ import { AvionsComponent } from '../avions/avions.component';
 })
 export class EditvolComponent implements OnInit {
   constructor(private fb: FormBuilder,
-    private route:ActivatedRoute,
-    public compagnies:CompagnieService) { }
-    form:FormGroup
-    vol:VolI;
-    code:string;
-    public fileTypes = Object.values(HabilitationsE);
+    private route: ActivatedRoute,
+    public compagnies: CompagnieService) { }
+  form: FormGroup
+  vol: VolI;
+  code: string;
+  public fileTypes = Object.values(HabilitationsE);
   ngOnInit() {
-    this.form= this.fb.group( {
-    code:"",
-    avion:this.fb.group({
-    modele:"",
-    capacite:0,
-    autonomie:0,
-    code:" "
-  }),
-  date:0,
-  personnel:this.fb.array([
-    this.addPersonnelForm()
-  ]),
-  aeroportDepart:"",
-  aeroportArrivee:"",
-  duree:0
+    this.form = this.fb.group({
+      code: "",
+      avion: this.fb.group({
+        modele: "",
+        capacite: 0,
+        autonomie: 0,
+        code: " "
+      }),
+      date: 0,
+      personnel: this.fb.array([
+        this.addPersonnelForm()
+      ]),
+      aeroportDepart: "",
+      aeroportArrivee: "",
+      duree: 0
 
     })
-    const code=this.route.snapshot.params["code"];
-    this.code=code;
-    this.vol=this.getVol(code);
+    const code = this.route.snapshot.params["code"];
+    this.code = code;
+    this.vol = this.getVol(code);
     this.patchForm(this.vol);
-    console.log(this.form.value)
-    this.deleteVol(this.vol)
+    console.log(this.form.value, this.vol)
+
   }
-  patchForm(vol:VolI):void{
+  patchForm(vol: VolI): void {
     console.log(vol)
-    this.form.patchValue(vol
-  //   {
-  //      code:vol.code,
-  //      avion:{
-  //      modele:vol.avion.modele,
-  //      capacite:vol.avion.capacite,
-  //      autonomie:vol.avion.autonomie,
-  //      code:vol.avion.code
-  //    },
-  //    date:vol.date,
-  //    aeroportDepart:vol.aeroportDepart,
-  //    aeroportArrivee:vol.aeroportArrivee,
-  //    duree:vol.date,
-  //    personnel: this.getPerso(vol),
-  // }
-  );
+    this.form.patchValue(vol);
+    //   {
+    //      code:vol.code,
+    //      avion:{
+    //      modele:vol.avion.modele,
+    //      capacite:vol.avion.capacite,
+    //      autonomie:vol.avion.autonomie,
+    //      code:vol.avion.code
+    //    },
+    //    date:vol.date,
+    //    aeroportDepart:vol.aeroportDepart,
+    //    aeroportArrivee:vol.aeroportArrivee,
+    //    duree:vol.date,
+    //    personnel: this.getPerso(vol),
+    // })
+
 
   }
-  patchPersonnel(vol:VolI):void{
-    this.vol.personnel.map((personnel)=>{
-
-
-
-
-
-    })
-
-  }
-  loadingVol1(vol:VolI){
+  loadingVol1(vol: VolI) {
     this.form
 
   }
-  loadingVol(vol:VolI){
+  loadingVol(vol: VolI) {
     this.form.patchValue(vol.personnel);
     console.log(this.form.value)
   }
-  getVol(code:string){
-    const vol =this.compagnies.getVol(code);
+  getVol(code: string) {
+    const vol = this.compagnies.getVol(code);
     return vol
   }
-  editVol(vol:FormGroup){
-    this.compagnies.deleteVol(vol.value);
+  editVol(vol: FormGroup) {
+    this.deleteVol(this.vol)
     this.compagnies.addVol(vol.value);
   }
-  addPersonnelForm():FormGroup{
+  addPersonnelForm(): FormGroup {
     return this.fb.group(
       {
-        nom:"",
-        prenom:[""],
-        habilitation:"",
+        nom: "",
+        prenom: [""],
+        habilitation: "",
       }
     )
 
 
   }
-  deleteVol(vol:VolI){
+  deleteVol(vol: VolI) {
     this.compagnies.deleteVol(vol)
   }
-  addPersonnelCLick():void{
+  addPersonnelCLick(): void {
     (<FormArray>this.form.get('personnel')).push(this.addPersonnelForm());
   }
   get refForm() {

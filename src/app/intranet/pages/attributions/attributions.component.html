@@ -1,33 +1,34 @@
 <section>
   <h3>Liste des vols dont le personnel doit etre attribué</h3>
-  <article >
-    <a> <button class="btn btn-warning"(click)="addButtonClick()">Add vol</button></a>
+  <article>
+
     <input [(ngModel)]="filtreModele" name="filtre">
     <table>
       <thead>
         <tr>
-            <td>Code</td>
-            <td>Modele de l'avion</td>
-            <td>Date de départ</td>
-            <td>Aeroport de départ</td>
-            <td>Aeroport d'arrivé</td>
-            <td>personnel déja attribué</td>
-            <td>Action</td>
+          <td>Code</td>
+          <td>Modele de l'avion</td>
+          <td>Date de départ</td>
+          <td>Aeroport de départ</td>
+          <td>Aeroport d'arrivé</td>
+          <td>personnel déja attribué</td>
+          <td>Action</td>
+          <a> <button class="btn btn-warning" (click)="addButtonClick()">Add vol</button></a>
         </tr>
       </thead>
-        <tr *ngFor="let v of compagnies.vols | avions:filtreModele">
-          <td>{{v.code}}</td>
-          <td>{{v.avion.modele}}</td>
-          <td>{{v.date}}</td>
-          <td>{{v.aeroportDepart}}</td>
-          <td>{{v.aeroportArrivee}}</td>
-          <td>
-              <ul>
-                <li *ngFor="let p of v.personnel">{{p.nom| uppercase}} {{p.prenom[0]}}({{p.habilitation}})
-              </ul>
-          </td>
-          <td> <button class="btn btn-warning"(click)="editButtonClick(v.code)">Edit vols</button></td>
-        </tr>
+      <tr *ngFor="let v of compagnies.vols | avions:filtreModele">
+        <td>{{v.code}}</td>
+        <td>{{v.avion.modele}}</td>
+        <td>{{v.date}}</td>
+        <td>{{v.aeroportDepart}}</td>
+        <td>{{v.aeroportArrivee}}</td>
+        <td>
+          <ul>
+            <li *ngFor="let p of v.personnel">{{p.nom| uppercase}} {{p.prenom[0]}}({{p.habilitation}})
+          </ul>
+        </td>
+        <td> <button class="btn btn-warning" (click)="editButtonClick(v.code)">Edit vols</button></td>
+      </tr>
     </table>
   </article>
 

@@ -6,12 +6,13 @@ import { UserI } from '../modeles/id-i';
   providedIn: 'root'
 })
 export class UserService {
-  user:UserI =<UserI>{};
+
+  token:string|number="MOnTokenAvecUneValeurQual";// Token recu après la connextion
+  user:UserI =<UserI>{};//Utilisateur avec ses propriétées
   constructor(private routeur:Router) { }
+  /**Déconnecter un utilisiteur */
   deconnextion(){
     this.user =<UserI>{};
     this.routeur.navigateByUrl("/")
-
-
   }
 }

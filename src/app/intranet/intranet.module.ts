@@ -9,11 +9,11 @@ import { PersonnelsComponent } from './pages/personnels/personnels.component';
 import { AvionsPipe } from './utils/avions.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonnelsPipe } from './utils/personnels.pipe';
-import { EditpersComponent } from './pages/editpers/editpers.component';
+import { EditpersComponent } from './pages/personnels/editpers/editpers.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CreatepersComponent } from './pages/createpers/createpers.component';
+import { CreatepersComponent } from './pages/personnels/createpers/createpers.component';
 import { EditvolComponent } from './pages/editvol/editvol.component';
-import { AddvolComponent } from './pages/addvol/addvol.component';
+import { AddvolComponent } from './pages/editvol/addvol/addvol.component';
 
 
 @NgModule({

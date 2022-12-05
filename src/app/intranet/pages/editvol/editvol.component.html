@@ -27,37 +27,35 @@
     <input id="date" formControlName="date" type="date" class="form-control" name="date">
   </div>
   <tbody>
-    <div class="well">
-        <div class="form-group">
-          <div class="col-md-offset-2 col-md-4">
-            <button type="button" class="btn btn-primary"(click)="addPersonnelCLick()">
-              Add personnel
-            </button>
-          </div>
-        </div>
-        <div formArrayName="personnel" *ngFor="let personnel of refForm.controls ; let i=index ">
-          <div [formGroupName]="i">
-            <tbody>
-                <th>
-                   <label for="nom">Nom</label>
-                  <input id="nom" type="text" class="form-control"
-                  name="nom" formControlName="nom"></th>
-                <td>
-                  <label for="prenom">Prenom</label>
-                  <input id="prenom" type="text" class="form-control"
-                  name="prenom" formControlName="prenom">
-                </td>
-                <td>
-                  <label for="habilitation">Habilitation</label>
-                  <select class="custom-select" name="habilitation" formControlName="habilitation" id="habilitation" >
-                    <option selected></option>
-                    <option *ngFor="let fileType of fileTypes" [value]="fileType"> {{fileType}}</option>
-                  </select>
-                </td>
-            </tbody>
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-4">
+        <button type="button" class="btn btn-primary" (click)="addPersonnelCLick()">
+          Add personnel
+        </button>
       </div>
-      </div>
-   </div>
+    </div>
+    <div formArrayName="personnel" *ngFor="let personnel of refForm.controls ; let i=index ">
+      <div [formGroupName]="i">
+  <tbody>
+    <th>
+      <label for="nom">Nom</label>
+      <input id="nom" type="text" class="form-control" name="nom" formControlName="nom">
+    </th>
+    <td>
+      <label for="prenom">Prenom</label>
+      <input id="prenom" type="text" class="form-control" name="prenom" formControlName="prenom">
+    </td>
+    <td>
+      <label for="habilitation">Habilitation</label>
+      <select class="custom-select" name="habilitation" formControlName="habilitation" id="habilitation">
+        <option selected></option>
+        <option *ngFor="let fileType of fileTypes" [value]="fileType"> {{fileType}}</option>
+      </select>
+    </td>
+  </tbody>
+  </div>
+  </div>
+
   </tbody>
 
   <div class="form-group">
@@ -66,7 +64,8 @@
   </div>
   <div class="form-group">
     <label for="aeroportArrivee">aeroportArrivee</label>
-    <input id="aeroportArrivee" formControlName="aeroportArrivee" type="text" class="form-control" name="aeroportArrivee">
+    <input id="aeroportArrivee" formControlName="aeroportArrivee" type="text" class="form-control"
+      name="aeroportArrivee">
   </div>
   <div class="form-group">
     <label for="duree">duree</label>

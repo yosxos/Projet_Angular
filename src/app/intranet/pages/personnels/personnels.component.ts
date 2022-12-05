@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonnelI } from '../../modeles/compagnie-i';
+import { AvionI, PersonnelI } from '../../modeles/compagnie-i';
 import { CompagnieService } from '../../services/compagnie.service';
 import { Router } from '@angular/router';
 
@@ -9,20 +9,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./personnels.component.css']
 })
 export class PersonnelsComponent implements OnInit {
-  filtreModele:string='';
+  filtreModele: string = '';
+  avion:AvionI =<AvionI>{};
 
-  constructor(public compagnies:CompagnieService,
-    private _router:Router) { }
+  constructor(public compagnies: CompagnieService,
+    private _router: Router) { }
 
   ngOnInit(): void {
   }
-  editButtonClick(personnel:string){
-    this._router.navigate(['/intranet/editpers',personnel]);
+  editButtonClick(personnel: string) {
+    this._router.navigate(['/intranet/editpers', personnel]);
 
   }
-  addButtonClick(){
+  addButtonClick() {
     this._router.navigate(['/intranet/createpers']);
 
   }
+
 
 }

@@ -6,17 +6,16 @@
     <div class="pannel-body">
       <div class="form-group">
         <label for="nom">Nom</label>
-        <input id="fullName" type="text" class="form-control"
-        name="nom" [(ngModel)]="personnel.nom">
+        <input id="fullName" type="text" class="form-control" name="nom" [(ngModel)]="personnel.nom">
       </div>
       <div class="form-group">
         <label for="prenom">Prenom</label>
-        <input id="fullName" type="text" class="form-control"
-        name="prenom" [(ngModel)]="personnel.prenom">
+        <input id="fullName" type="text" class="form-control" name="prenom" [(ngModel)]="personnel.prenom">
       </div>
       <div class="form-group">
         <label for="habilitation">Habilitation</label>
-        <select class="custom-select" name="habilitation" [(ngModel)]="personnel.habilitation" id="habilitation" required>
+        <select class="custom-select" name="habilitation" [(ngModel)]="personnel.habilitation" id="habilitation"
+          required>
           <option selected></option>
           <option *ngFor="let fileType of fileTypes" [value]="fileType"> {{fileType}}</option>
         </select>

@@ -7,53 +7,57 @@ import { AvionI, PersonnelI, VolI } from '../modeles/compagnie-i';
   providedIn: 'root'
 })
 export class CompagnieService {
-  vols:VolI[]=<VolI[]>{}
-  personnels:PersonnelI[]=<PersonnelI[]>{}
-  avions:AvionI[]=<AvionI[]>{}
+  vols: VolI[] = <VolI[]>{}
+  personnels: PersonnelI[] = <PersonnelI[]>{}
+  avions: AvionI[] = <AvionI[]>{}
 
 
-  constructor(private readonly http:HttpClient) {
+  constructor(private readonly http: HttpClient) {
     this.getVols();
     this.getPersonels();
     this.getAvions();
   }
-getVols(){
-  this.http.get<VolI[]>('assets/data/vols.json').subscribe(p => {console.log("Data du fichier json",p);
-  this.vols =p;});
-}
-getPersonels(){
-  this.http.get<PersonnelI[]>('assets/data/personnels.json').subscribe(p => {console.log("Data du fichier json",p);
-  this.personnels =p;
-});
-}
-getPersonel(name:string){
-  return this.personnels.filter((d)=>d.nom ==name)[0];
-}
-addPersonel(personnel:PersonnelI){
-  const body=JSON.stringify(personnel);
-  this.personnels.push(personnel);
-  console.log(this.personnels);
-}
-deletePersonel(pers:PersonnelI){
-  this.personnels = this.personnels.filter(obj =>   obj !== pers);
-}
+  getVols() {
+    this.http.get<VolI[]>('assets/data/vols.json').subscribe(p => {
+      console.log("Data du fichier json", p);
+      this.vols = p;
+    });
+  }
+  getPersonels() {
+    this.http.get<PersonnelI[]>('assets/data/personnels.json').subscribe(p => {
+      console.log("Data du fichier json", p);
+      this.personnels = p;
+    });
+  }
+  getPersonel(name: string) {
+    return this.personnels.filter((d) => d.nom == name)[0];
+  }
+  addPersonel(personnel: PersonnelI) {
+    const body = JSON.stringify(personnel);
+    this.personnels.push(personnel);
+    console.log(this.personnels);
+  }
+  deletePersonel(pers: PersonnelI) {
+    this.personnels = this.personnels.filter(obj => obj !== pers);
+  }
 
-getAvions(){
-  this.http.get<AvionI[]>('assets/data/avions.json').subscribe(p => {console.log("Data du fichier json",p);
-  this.avions =p;
-});
-}
-getVol(code:string){
-  return this.vols.filter((d)=>d.code ==code)[0];
-}
-addVol(vol:VolI){
-  const body=JSON.stringify(vol);
-  this.vols.push(vol);
-  console.log(this.personnels);
-}
-deleteVol(vol:VolI){
-  this.vols = this.vols.filter(obj =>   obj !== vol);
+  getAvions() {
+    this.http.get<AvionI[]>('assets/data/avions.json').subscribe(p => {
+      console.log("Data du fichier json", p);
+      this.avions = p;
+    });
+  }
+  getVol(code: string) {
+    return this.vols.filter((d) => d.code == code)[0];
+  }
+  addVol(vol: VolI) {
+    const body = JSON.stringify(vol);
+    this.vols.push(vol);
+    console.log(this.personnels);
+  }
+  deleteVol(vol: VolI) {
+    this.vols = this.vols.filter(obj => obj !== vol);
 
-}
+  }
 
 }

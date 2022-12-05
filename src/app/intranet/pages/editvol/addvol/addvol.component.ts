@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, NgForm } from '@angular/forms';
-import { HabilitationsE, VolI } from '../../modeles/compagnie-i';
-import { CompagnieService } from '../../services/compagnie.service';
+import { HabilitationsE, VolI } from '../../../modeles/compagnie-i';
+import { CompagnieService } from '../../../services/compagnie.service';
 
 @Component({
   selector: 'app-addvol',
