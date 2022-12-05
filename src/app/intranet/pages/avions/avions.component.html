@@ -7,7 +7,7 @@
 </aside>
 <section>
   <h3>Liste des avions disponibles</h3>
-  <p>Code l'avion sélectionné :</p>
+  <p>Avion sélectionné :</p>
   <form (submit)="updateAvion()" #f="ngForm" *ngIf="avion">
     <label for="modele"> Modèle</label>
     <input [(ngModel)]="avion.modele" name="modele">
