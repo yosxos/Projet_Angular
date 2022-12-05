@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "projetvol": {
+      "hosting": {
+        "projetVol": [
+          "projetvol"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "projetvol"
+  }
+}
