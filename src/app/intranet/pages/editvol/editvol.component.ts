@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, NgForm } from '@angular/forms';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { HabilitationsE, VolI } from '../../modeles/compagnie-i';
+import { HabilitationsE, PersonnelI, VolI } from '../../modeles/compagnie-i';
 import { CompagnieService } from '../../services/compagnie.service';
 import { AvionsComponent } from '../avions/avions.component';
 
@@ -18,6 +18,7 @@ export class EditvolComponent implements OnInit {
     form:FormGroup
     vol:VolI;
     code:string;
+    personnels:PersonnelI[]=<PersonnelI[]>{}
     public fileTypes = Object.values(HabilitationsE);
   ngOnInit() {
     this.form= this.fb.group( {
@@ -28,7 +29,7 @@ export class EditvolComponent implements OnInit {
     autonomie:0,
     code:" "
   }),
-  date:new Date(0),
+  date:0,
   personnel:this.fb.array([
     this.addPersonnelForm()
   ]),
@@ -40,12 +41,51 @@ export class EditvolComponent implements OnInit {
     const code=this.route.snapshot.params["code"];
     this.code=code;
     this.vol=this.getVol(code);
-    this.loadingVol(this.vol);
-    console.log(this.vol)
+    this.patchForm(this.vol);
+    console.log(this.form.value)
     this.deleteVol(this.vol)
   }
+  patchForm(vol:VolI):void{
+    console.log(vol)
+    this.form.patchValue(vol
+  //   {
+  //      code:vol.code,
+  //      avion:{
+  //      modele:vol.avion.modele,
+  //      capacite:vol.avion.capacite,
+  //      autonomie:vol.avion.autonomie,
+  //      code:vol.avion.code
+  //    },
+  //    date:vol.date,
+  //    aeroportDepart:vol.aeroportDepart,
+  //    aeroportArrivee:vol.aeroportArrivee,
+  //    duree:vol.date,
+  //    personnel: this.getPerso(vol),
+  // }
+  );
+    //this.patchPersonnel(vol);
+  }
+  getPerso(vol:VolI){
+      return vol.personnel
+
+  }
+  patchPersonnel(vol:VolI):void{
+    this.vol.personnel.map((personnel)=>{
+
+
+
+
+
+    })
+
+  }
+  loadingVol1(vol:VolI){
+    this.form
+
+  }
   loadingVol(vol:VolI){
-    this.form.patchValue(vol )
+    this.form.patchValue(vol.personnel);
+    console.log(this.form.value)
   }
   getVol(code:string){
     const vol =this.compagnies.getVol(code);
