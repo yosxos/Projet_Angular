@@ -21,6 +21,7 @@ export class AvionsComponent implements OnInit {
     this.compagnies.updateFireAvion(this.avion.code as string ,this.avion)
 
   }
+
   resetAvion(){
     this.avion=<AvionI>{};
   }

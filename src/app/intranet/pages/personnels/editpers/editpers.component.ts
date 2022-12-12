@@ -30,6 +30,10 @@ export class EditpersComponent implements OnInit {
   deletePersonel(pers: PersonnelI) {
     this.compagnies.deletePersonel(pers)
   }
+  updatePersonnel(){
+    this.compagnies
+
+  }
   editPersonnel(personnel: NgForm) {
     console.log(personnel.value)
     this.compagnies.addPersonel(personnel.value)
