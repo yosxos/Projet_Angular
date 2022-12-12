@@ -64,7 +64,6 @@ export class CompagnieService {
   async getFireAvion(code:string){
     const docAvion = doc(this.bdd, 'avions',code)
     await getDoc(docAvion)
-
   }
   /**
    * Delete avion from data base

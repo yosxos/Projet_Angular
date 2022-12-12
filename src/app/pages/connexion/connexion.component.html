@@ -1,15 +1,25 @@
-<section>
-  <h2><strong>Se connecter</strong></h2>
-  <h3>You need to log in to edit your flight</h3>
-  <form (submit)="checkId()"#f="ngForm">
-    <label> Identifiant</label>
-    <input name="id" [(ngModel)]="id.id" #ctlId="ngModel" (input)="logId()" required placeholder="Saississez votre identifiant">
-    <span *ngIf="ctlId.invalid">Ce champ est requis</span>
-    <label> Mot de passe</label>
-    <input name="pass" type="password" #ctlPass="ngModel"  [(ngModel)]="id.passe" required>
-    <span *ngIf="ctlPass.invalid">Ce champ est requis</span>
-    <span *ngIf="f.valid">Ce formulaire semble correcte</span>
-    <input type="submit"  value="Connextion"[disabled]="f.invalid">
-    <input type="reset" value ="Annuler">
-  </form>
-</section>
+<nav class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <h1 class="fw-light">Vols Manageur</h1>
+      <div class="col-12 text-center">
+        <section>
+          <h3>You need to log in first</h3>
+          <form (submit)="checkId()"#f="ngForm">
+            <label> Identifiant</label>
+            <input name="id" [(ngModel)]="id.id" #ctlId="ngModel" (input)="logId()" required placeholder="Saississez votre identifiant" >
+            <span *ngIf="ctlId.invalid">Ce champ est requis</span>
+            <label> Mot de passe</label>
+            <input name="pass" type="password" #ctlPass="ngModel"  [(ngModel)]="id.passe" required>
+            <span *ngIf="ctlPass.invalid">Ce champ est requis</span>
+            <span *ngIf="f.valid">Ce formulaire semble correcte</span>
+            <button class="btn btn-outline-dark" type="submit" value="Connextion"[disabled]="f.invalid">Connextion</button>
+            <button class="btn btn-outline-dark" type="reset" value ="Annuler">Reset</button>
+          </form>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</nav>
+

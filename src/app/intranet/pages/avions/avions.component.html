@@ -1,8 +1,8 @@
 <aside>
   <h2>list des avions</h2>
   <ul>
-  <li *ngFor="let av of compagnies.avions" (click)="selectAvion(av.code)">
-                          {{av.modele}}
+  <a><li *ngFor="let av of compagnies.avions" (click)="selectAvion(av.code)">
+                          {{av.modele}}</a>
   </ul>
 </aside>
 <section>
