@@ -10,7 +10,7 @@ const routes: Routes = [
 {path:'',component:ConnexionComponent},
 {path:'mentions',component:MentionsComponent},
 {path:'profil',component:ProfilComponent},
-{path:'profil/:fautmettrecequonveut',component:ProfilComponent},
+{path:'profil/:email',component:ProfilComponent},
 {path:'intranet',loadChildren: () => import('./intranet/intranet.module').then(m => m.IntranetModule),canActivate:[AuthGuard],canLoad:[AuthGuard]},
 {path:'**',component:ErreurRouteComponent}
 ];

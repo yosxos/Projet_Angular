@@ -14,12 +14,7 @@ export class PagesService {
     contenu:"Copy rights ..."
   };
 
-  profil:ProfileI ={
-    Titre:"Votre profile:",
-    Nom:"yas",
-    Prenom:"ait"
 
-  };
 
   constructor(private readonly http:HttpClient) {
     this.getPages();

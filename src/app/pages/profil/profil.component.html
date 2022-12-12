@@ -1,18 +1,10 @@
-<nav>
-  <a routerLink="/"href>Accueil</a>
-</nav>
 <section>
-    <h1>{{pageServ.profil.Titre}}</h1>
-    <table style="width: 300px;" border="2">
-      <tbody>
-      <tr>
-      <td>name</td>
-      <td>{{userServ.user.nom}}</td>
-      </tr>
-      <tr>
-      <td>Last name</td>
-      <td>{{userServ.user.prenoms}}</td>
-      </tr>
-      </tbody>
-      </table>
+  <h3>Profile:</h3>
+<form (submit)="updateProfile()" #f="ngForm">
+  <label for="nom">Nom</label>
+  <input [(ngModel)]="profile.Nom" name="nom">
+  <label for="prenom">Prenom</label>
+  <input [(ngModel)]="profile.Prenom" name="prenom">
+  <button class="btn btn-outline-dark" type="submit" value="Valider">Valider</button>
+</form>
 </section>

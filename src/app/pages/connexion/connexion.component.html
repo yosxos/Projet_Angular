@@ -5,7 +5,7 @@
       <div class="col-12 text-center">
         <section>
           <h3>You need to log in first</h3>
-          <form (submit)="checkId()"#f="ngForm">
+          <form (submit)="checkFromFire()"#f="ngForm">
             <label> Identifiant</label>
             <input name="id" [(ngModel)]="id.id" #ctlId="ngModel" (input)="logId()" required placeholder="Saississez votre identifiant" >
             <span *ngIf="ctlId.invalid">Ce champ est requis</span>

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { ActivatedRouteSnapshot, CanActivate, CanLoad, Route, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserService } from '../services/user.service';
@@ -7,17 +8,17 @@ import { UserService } from '../services/user.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate, CanLoad {
-  constructor(private u:UserService){
+  constructor(private u:UserService ,private auth:Auth){
 
   }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.u.user.statut=="paté";
+    return this.u.user.statut=="paté" || this.auth.currentUser? true:false;
   }
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.u.user.statut=="paté";
+    return this.u.user.statut=="paté"|| this.auth.currentUser? true:false;
   }
 }

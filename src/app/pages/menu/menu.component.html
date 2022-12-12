@@ -1,22 +1,20 @@
+
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark ">
   <div class="container">
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link text-white mb-3" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link text-white mb-3" routerLink="/mentions" href>About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
+          <a class="nav-link text-white mb-3" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf="u.user.statut" routerLink="/profil" href>Mon profile</a>
+          <a class="nav-link text-white mb-3" *ngIf="u.user.statut || auth.currentUser" routerLink="/profil" href>Mon profile</a>
         </li>
       </ul>
     </div>

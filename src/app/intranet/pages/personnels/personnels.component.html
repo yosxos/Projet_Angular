@@ -2,9 +2,9 @@
   <h3>Liste des personnels disponible</h3>
 
   <article>
-    <a> <button class="btn btn-warning" (click)="addButtonClick()">Create personnels</button></a>
-    <table>
-      <input [(ngModel)]="filtreModele" name="filtre">
+    <a> <button class="btn btn-outline-danger" (click)="addButtonClick()">Create personnels</button></a>
+
+    <table class="table">
       <thead>
         <tr>
           <td>Nom</td>
@@ -13,14 +13,16 @@
           <td>Action</td>
         </tr>
       </thead>
-      <tr *ngFor="let v of compagnies.personnels$ " >
-        <td>{{v.data.nom}}</td>
-        <td>{{v.data.prenom}}</td>
-        <td>{{v.data.habilitation}}</td>
-        <td> <button class="btn btn-warning" (click)="editButtonClick(v.id)">Edit personnels</button></td>
-        <td> <button class="btn btn-warning" (click)="compagnies.deletePersonel(v.data)">Delete personnels</button></td>
-
-      </tr>
+      <tbody>
+        <tr *ngFor="let v of compagnies.personnels$ ">
+          <td>{{v.data.nom}}</td>
+          <td>{{v.data.prenom}}</td>
+          <td>{{v.data.habilitation}}</td>
+          <td> <button class="btn btn-outline-dark" (click)="editButtonClick(v.id)">Edit personnels</button></td>
+          <td> <button class="btn btn-outline-dark" (click)="compagnies.deletePersonel(v.data)">Delete
+              personnels</button></td>
+        </tr>
+      </tbody>
     </table>
   </article>
 </section>

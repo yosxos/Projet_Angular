@@ -3,7 +3,7 @@
   <article>
 
     <input [(ngModel)]="filtreModele" name="filtre">
-    <table>
+    <table class="table table-striped">
       <thead>
         <tr>
           <td>Code</td>
@@ -13,9 +13,10 @@
           <td>Aeroport d'arrivé</td>
           <td>personnel déja attribué</td>
           <td>Action</td>
-          <a> <button class="btn btn-warning" (click)="addButtonClick()">Add vol</button></a>
+          <a> <button class="btn btn-outline-danger" (click)="addButtonClick()">Add vol</button></a>
         </tr>
       </thead>
+      <tbody>
       <tr *ngFor="let v of compagnies.vols | avions:filtreModele">
         <td>{{v.code}}</td>
         <td>{{v.avion.modele}}</td>
@@ -27,8 +28,9 @@
             <li *ngFor="let p of v.personnel">{{p.nom| uppercase}} {{p.prenom[0]}}({{p.habilitation}})
           </ul>
         </td>
-        <td> <button class="btn btn-warning" (click)="editButtonClick(v.code)">Edit vols</button></td>
+        <td> <button class="btn btn-outline-dark" (click)="editButtonClick(v.code)">Edit vols</button></td>
       </tr>
+      </tbody>
     </table>
   </article>
 

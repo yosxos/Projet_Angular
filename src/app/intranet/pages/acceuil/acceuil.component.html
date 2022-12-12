@@ -1,11 +1,16 @@
-<aside>
+<aside class="masthead">
   <nav>
-    <a href routerLink="/intranet" title="Retourner à l'acceuil de l'intranet">Attribution</a>
-    <a href routerLink="/intranet/avions" title="Administer les avions">avions</a>
-    <a href routerLink="/intranet/personnels" title="Voir ou éditer le personnels">Personnels</a>
+    <ul>
+        <li><a  href routerLink="/intranet" title="Retourner à l'acceuil de l'intranet" ><i class="fa fa-intranet"></i>&nbsp;  Attribution</a></li>
+        <li><a href routerLink="/intranet/personnels" title="Administer le personnel"><i class="fa fa-personnel"></i>&nbsp;  Personnels</a></li>
+        <li><a href routerLink="/intranet/avions" title="Administer les avions" ><i class="fa fa-avions"></i>&nbsp;  Avions</a></li>
+    </ul>
   </nav>
+  <div class="wrapper">
+        <div class="col py-3 text-center">
+          <h1>Intranet</h1>
+              <router-outlet></router-outlet>
+      </div>
+  </div>
+
 </aside>
-<section>
-  <h2>Bienvenue dans l'intranet</h2>
-  <router-outlet></router-outlet>
-</section>

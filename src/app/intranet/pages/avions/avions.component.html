@@ -17,7 +17,8 @@
     <input [(ngModel)]="avion.autonomie" name="autonomie">
     <label for="code"> Code</label>
     <input [(ngModel)]="avion.code" name="code">
-    <input type="reset" value="Annuler" (click)="resetAvion()">
-    <input type="submit" value="Valider">
+    <button class="btn btn-outline-dark" type="submit" value="Valider">Valider</button>
+    <button class="btn btn-outline-dark" type="reset" value="Annuler" (click)="resetAvion()">Connextion</button>
+
   </form>
 </section>
