@@ -1,28 +1,16 @@
-<form #personnelForm="ngForm" (submit)="editPersonnel(personnelForm)">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">Edit personnel</h3>
-    </div>
-    <div class="pannel-body">
-      <div class="form-group">
-        <label for="nom">Nom</label>
-        <input id="fullName" type="text" class="form-control" name="nom" [(ngModel)]="perxx.nom">
-      </div>
-      <div class="form-group">
-        <label for="prenom">Prenom</label>
-        <input id="fullName" type="text" class="form-control" name="prenom" [(ngModel)]="perxx.prenom">
-      </div>
-      <div class="form-group">
-        <label for="habilitation">Habilitation</label>
-        <select class="custom-select" name="habilitation" [(ngModel)]="perxx.habilitation" id="habilitation">
-          <option selected></option>
-          <option *ngFor="let fileType of fileTypes" [value]="fileType"> {{fileType}}</option>
-        </select>
-      </div>
-    </div>
 
-    <div class="panel-footer">
-      <button type="submit" class="btn btn-primary">Save</button>
-    </div>
-  </div>
-</form>
+<section>
+  <h3>Modifier le personnel </h3>
+  <form (submit)="updatePersonnel()" #f="ngForm" *ngIf="perxx">
+    <label for="nom"> Nom</label>
+    <input [(ngModel)]="perxx.nom" name="nom">
+    <label for="prenom"> Prenom</label>
+    <input [(ngModel)]="perxx.prenom" name="prenom">
+    <label for="Habilitation"> Habilitation</label>
+    <select class="custom-select" name="habilitation" [(ngModel)]="perxx.habilitation" id="habilitation">
+      <option selected></option>
+      <option *ngFor="let fileType of fileTypes" [value]="fileType"> {{fileType}}</option>
+    </select>
+    <input type="submit" value="Valider">
+  </form>
+</section>

@@ -15,28 +15,23 @@ export class EditpersComponent implements OnInit {
 
   public fileTypes = Object.values(HabilitationsE);
   constructor(private route: ActivatedRoute,
-    public compagnies: CompagnieService) { }
+  public compagnies: CompagnieService) { }
   perxx: PersonnelI;
+  id:string;
 
   ngOnInit(): void {
-    const name = this.route.snapshot.params["nom"];
-    this.perxx = this.getPersonel(name)
-    this.deletePersonel(this.getPersonel(name))
+    const name = this.route.snapshot.params["id"];
+    this.id=name;
+    this.getPersonel(name)
   }
   getPersonel(nom: string) {
-    const personnel = this.compagnies.getPersonel(nom);
-    return personnel;
+    this.perxx=this.compagnies.personnels$.find(pers=> pers.id==nom).data
   }
   deletePersonel(pers: PersonnelI) {
     this.compagnies.deletePersonel(pers)
   }
   updatePersonnel(){
-    this.compagnies
-
-  }
-  editPersonnel(personnel: NgForm) {
-    console.log(personnel.value)
-    this.compagnies.addPersonel(personnel.value)
+    this.compagnies.updateFirePersonnel(this.id,this.perxx)
 
   }
 }

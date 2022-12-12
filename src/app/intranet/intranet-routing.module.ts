@@ -14,7 +14,7 @@ const routes: Routes = [
     {path:'',component:AttributionsComponent},
     {path:'avions',component:AvionsComponent},
     {path:'personnels',component:PersonnelsComponent},
-    {path:'editpers/:nom',component:EditpersComponent},
+    {path:'editpers/:id',component:EditpersComponent},
     {path:'createpers',component:CreatepersComponent},
     {path:'editvol/:code',component:EditvolComponent},
     {path:'addvol',component:AddvolComponent}

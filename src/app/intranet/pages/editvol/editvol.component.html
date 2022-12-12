@@ -1,80 +1,27 @@
-<div style="float: left; width:50%;"></div>
-<form [formGroup]="form" (submit)="editVol(form)">
-  <div class="form-group">
-    <label for="code">Code</label>
-    <input id="code" formControlName="code" type="text" class="form-control" name="code">
-  </div>
-  <div formGroupName="avion">
-    <div class="form-group">
-      <label for="modele">modele</label>
-      <input type="text" class="form-control" name="modele" formControlName="modele">
-    </div>
-    <div class="form-group">
-      <label for="capacite">capacite</label>
-      <input type="number" class="form-control" name="capacite" formControlName="capacite">
-    </div>
-    <div class="form-group">
-      <label for="autonomie">City</label>
-      <input type="number" class="form-control" name="autonomie" formControlName="autonomie">
-    </div>
-    <div class="form-group">
-      <label for="code">code</label>
-      <input type="code" class="form-control" name="code" formControlName="code">
-    </div>
-  </div>
-  <div formGroupName="date">
-    <label for="date">date</label>
-    <input id="date" formControlName="date" type="date" class="form-control" name="date">
-  </div>
-  <tbody>
-    <div class="form-group">
-      <div class="col-md-offset-2 col-md-4">
-        <button type="button" class="btn btn-primary" (click)="addPersonnelCLick()">
-          Add personnel
-        </button>
-      </div>
-    </div>
-    <div formArrayName="personnel" *ngFor="let personnel of refForm.controls ; let i=index ">
-      <div [formGroupName]="i">
-  <tbody>
-    <th>
-      <label for="nom">Nom</label>
-      <input id="nom" type="text" class="form-control" name="nom" formControlName="nom">
-    </th>
-    <td>
-      <label for="prenom">Prenom</label>
-      <input id="prenom" type="text" class="form-control" name="prenom" formControlName="prenom">
-    </td>
-    <td>
-      <label for="habilitation">Habilitation</label>
-      <select class="custom-select" name="habilitation" formControlName="habilitation" id="habilitation">
-        <option selected></option>
-        <option *ngFor="let fileType of fileTypes" [value]="fileType"> {{fileType}}</option>
-      </select>
-    </td>
-  </tbody>
-  </div>
-  </div>
+<section>
+  <h3>Liste des avions disponibles</h3>
+  <p>Avion sélectionné :</p>
+  <form (submit)="updateVol()" #f="ngForm" *ngIf="vol">
+    <label for="code"> Code</label>
+    <input [(ngModel)]="vol.code" name="code">
+    <label for="avion"> Avion</label>
+    <li> <input [(ngModel)]="vol.avion.modele" name="modele"></li>
+    <li> <input [(ngModel)]="vol.avion.autonomie" name="autonomie"></li>
+    <li> <input [(ngModel)]="vol.avion.code" name="code"></li>
+    <li> <input [(ngModel)]="vol.avion.capacite" name="capacite"></li>
+    <label for="date"> Date</label>
+    <input [(ngModel)]="vol.date" name="date">
+    <label for="personnels"> Personnels</label>
 
-  </tbody>
-
-  <div class="form-group">
-    <label for="aeroportDepart">aeroportDepart</label>
-    <input id="aeroportDepart" formControlName="aeroportDepart" type="text" class="form-control" name="aeroportDepart">
-  </div>
-  <div class="form-group">
-    <label for="aeroportArrivee">aeroportArrivee</label>
-    <input id="aeroportArrivee" formControlName="aeroportArrivee" type="text" class="form-control"
-      name="aeroportArrivee">
-  </div>
-  <div class="form-group">
-    <label for="duree">duree</label>
-    <input id="duree" formControlName="duree" type="number" class="form-control" name="duree">
-  </div>
-  <div class="panel-footer">
-    <button type="submit" class="btn btn-primary">Save</button>
-  </div>
-
-</form>
-<h3>Form Value</h3>
-{{form.value |json}}
+    <tr *ngFor="let p of vol.personnel">
+      <input [(ngModel)]="p.nom" name="nom">
+      <input [(ngModel)]="p.prenom" name="prenom">
+      <input [(ngModel)]="p.habilitation" name="habilitation">
+    </tr>
+    <label for="aeroportArrivee"> Aeroport D'Arrivée</label>
+    <input [(ngModel)]="vol.aeroportArrivee" name="aeroportArrivee">
+    <label for="aeroportDepart"> Aeroport De départ</label>
+      <input [(ngModel)]="vol.aeroportArrivee" name="aeroportArrivee">
+      <input type="submit" value="Valider">
+  </form>
+</section>
