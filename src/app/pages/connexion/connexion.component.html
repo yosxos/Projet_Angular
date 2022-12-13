@@ -1,20 +1,29 @@
 <nav class="masthead">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
-      <h1 class="fw-light">Vols Manageur</h1>
+      <h1 class="fw-light"><strong>Vols Manageur</strong> </h1>
       <div class="col-12 text-center">
         <section>
           <h3>You need to log in first</h3>
-          <form (submit)="checkFromFire()"#f="ngForm">
-            <label> Identifiant</label>
-            <input name="id" [(ngModel)]="id.id" #ctlId="ngModel" (input)="logId()" required placeholder="Saississez votre identifiant" >
+          <form (submit)="checkFromFire()" #f="ngForm">
+            <div class="mb-3">
+              <label class="form-label"> Identifiant</label>
+              <input type="text" class="form-control" name="id" [(ngModel)]="id.id" #ctlId="ngModel" (input)="logId()"
+                required placeholder="Saississez votre identifiant">
+            </div>
             <span *ngIf="ctlId.invalid">Ce champ est requis</span>
-            <label> Mot de passe</label>
-            <input name="pass" type="password" #ctlPass="ngModel"  [(ngModel)]="id.passe" required>
+            <div class="mb-3">
+              <label class="form-label"> Mot de passe</label>
+              <input name="pass" type="password" class="form-control" #ctlPass="ngModel" [(ngModel)]="id.passe"
+                required>
+            </div>
+
             <span *ngIf="ctlPass.invalid">Ce champ est requis</span>
             <span *ngIf="f.valid">Ce formulaire semble correcte</span>
-            <button class="btn btn-outline-dark" type="submit" value="Connextion"[disabled]="f.invalid">Connextion</button>
-            <button class="btn btn-outline-dark" type="reset" value ="Annuler">Reset</button>
+            <button class="btn btn-outline-dark" type="submit" value="Connextion"
+              [disabled]="f.invalid">Connextion</button>
+            <button class="btn btn-outline-dark" type="reset" value="Annuler">Reset</button>
+
           </form>
         </section>
 
@@ -22,4 +31,3 @@
     </div>
   </div>
 </nav>
-
