@@ -2,9 +2,12 @@
   <h3>Profile:</h3>
 <form (submit)="updateProfile()" #f="ngForm">
   <label for="nom">Nom</label>
-  <input [(ngModel)]="profile.Nom" name="nom">
+  <input [(ngModel)]="user.nom" name="nom">
   <label for="prenom">Prenom</label>
-  <input [(ngModel)]="profile.Prenom" name="prenom">
+  <input [(ngModel)]="user.prenoms" name="prenom">
+  <label for="statut">statut</label>
+  <label> {{user.statut}}</label>
   <button class="btn btn-outline-dark" type="submit" value="Valider">Valider</button>
+
 </form>
 </section>

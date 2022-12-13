@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, Input } from '@angular/core';
 import { Firestore, collection, getDocs, doc, getDoc, deleteDoc, setDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { UserI } from 'src/app/modeles/id-i';
 import { ProfileI } from 'src/app/modeles/pages-i';
 import { AvionI, PersonnelI, VolI } from '../modeles/compagnie-i';
 
@@ -13,7 +14,7 @@ export class CompagnieService {
   personnels: Array<(PersonnelI)> = []
   personnels$: Array<{ id: string, data: PersonnelI }> = []
   avions: Array<AvionI> = [];
-  profils: Array<{id:string ,data:ProfileI}> = []
+  users: Array<{id:string ,data:UserI}> = []
   constructor(private readonly http: HttpClient,
     private bdd: Firestore) {
     //this.getVols();
@@ -22,7 +23,7 @@ export class CompagnieService {
     this.getFireVols();
     this.getFirePersonnels();
     this.getFireAvions();
-    this.getFireProfils();
+    this.getFireUsers();
   }
   getVols() {
     this.http.get<VolI[]>('assets/data/vols.json').subscribe(p => {
@@ -176,19 +177,18 @@ export class CompagnieService {
     this.vols = this.vols.filter(obj => obj !== vol);
 
   }
-  async getFireProfils() {
+  async getFireUsers() {
     await getDocs(collection(this.bdd, 'profils')).then(
       pers => {
         console.log(pers);
         pers.forEach(p => {
-          console.log(p.id, p.data());
-          this.profils.push({ id: p.id, data:p.data() as ProfileI });
+          this.users.push({ id: p.id, data:p.data() as UserI });
         })
       }
     ).catch(erreur => console.log("Erreur", erreur));
 
   }
-  async updateFireProfil(code: string, data: ProfileI) {
+  async updateFireUser(code: string, data: UserI) {
     const docProfil= doc(this.bdd, 'profils', code)
     await setDoc(docProfil, data, { merge: true });
 
